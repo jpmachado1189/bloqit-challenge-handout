@@ -1,0 +1,82 @@
+services:
+  # API GATEWAY
+  gateway:
+    build:
+      context: ./gateway
+    ports:
+      - '3003:3003'
+    env_file: './gateway/.env'
+
+  # BLOQ SERVICE
+  bloq-service:
+    build:
+      context: ./bloq
+    ports:
+      - '3000:3000'
+    env_file: './bloq/.env'
+    depends_on:
+      - bloq-mongodb
+
+  # LOCKER SERVICE
+  locker-service:
+    build:
+      context: ./locker
+    ports:
+      - '3001:3001'
+    env_file: './locker/.env'
+    depends_on:
+      - locker-mongodb
+
+  # RENT SERVICE
+  rent-service:
+    build:
+      context: ./rent
+    ports:
+      - '3002:3002'
+    env_file: './rent/.env'
+    depends_on:
+      - rent-mongodb
+
+  # BLOQ DB
+  bloq-mongodb:
+    image: mongo:7.0
+    env_file: './bloq/.env'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    ports:
+      - '27017:27017'
+    volumes:
+      - bloq-mongo-data:/data/db
+
+  # LOCKER DB
+  locker-mongodb:
+    image: mongo:7.0
+    env_file: './locker/.env'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    ports:
+      - '27018:27017'
+    volumes:
+      - locker-mongo-data:/data/db
+
+  # LOCKER DB
+  rent-mongodb:
+    image: mongo:7.0
+    env_file: './rent/.env'
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    ports:
+      - '27019:27017'
+    volumes:
+      - rent-mongo-data:/data/db
+
+volumes:
+  bloq-mongo-data:
+    driver: local
+  locker-mongo-data:
+    driver: local
+  rent-mongo-data:
+    driver: local

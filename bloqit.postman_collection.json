@@ -1,0 +1,419 @@
+{
+	"info": {
+		"_postman_id": "0813c528-727b-407e-831d-93901a9eb355",
+		"name": "Bloq.it Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25625822"
+	},
+	"item": [
+		{
+			"name": "BLOQ - Find All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/api/bloqs/findAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"bloqs",
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BLOQ - Find Closest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/api/bloqs/findClosest/mockaddress",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"bloqs",
+						"findClosest",
+						"mockaddress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BLOQ - Save Mock Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"id\": \"c3ee858c-f3d8-45a3-803d-e080649bbb6f\",\n    \"title\": \"Luitton Vouis Champs Elysées\",\n    \"address\": \"101 Av. des Champs-Élysées, 75008 Paris, France\"\n  },\n  {\n    \"id\": \"484e01be-1570-4ac1-a2a9-02aad3acc54e\",\n    \"title\": \"Riod Eixample\",\n    \"address\": \"Pg. de Gràcia, 74, L'Eixample, 08008 Barcelona, Spain\"\n  },\n  {\n    \"id\": \"22ffa3c5-3a3d-4f71-81f1-cac18ffbc510\",\n    \"title\": \"Bluberry Regent Street\",\n    \"address\": \"121 Regent St, Mayfair, London W1B 4TB, United Kingdom\"\n  }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3003/api/bloqs/bulkSave",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"bloqs",
+						"bulkSave"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BLOQ - Delete All",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/api/bloqs/deleteAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"bloqs",
+						"deleteAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCKER - Find All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/api/lockers/findAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"lockers",
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCKER - Find Available by Bloq ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/api/lockers/findAvailableByBloqId/484e01be-1570-4ac1-a2a9-02aad3acc54e",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"lockers",
+						"findAvailableByBloqId",
+						"484e01be-1570-4ac1-a2a9-02aad3acc54e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCKER - Pick Up",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/api/lockers/pickup/1b8d1e89-2514-4d91-b813-044bf0ce8d20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"lockers",
+						"pickup",
+						"1b8d1e89-2514-4d91-b813-044bf0ce8d20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCKER - Drop off",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/api/lockers/dropoff/1b8d1e89-2514-4d91-b813-044bf0ce8d20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"lockers",
+						"dropoff",
+						"1b8d1e89-2514-4d91-b813-044bf0ce8d20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCKER - Save Mock Data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n  {\n    \"id\": \"1b8d1e89-2514-4d91-b813-044bf0ce8d20\",\n    \"bloqId\": \"c3ee858c-f3d8-45a3-803d-e080649bbb6f\",\n    \"status\": \"CLOSED\",\n    \"isOccupied\": false\n  },\n  {\n    \"id\": \"8b4b59ae-8de5-4322-a426-79c29315a9f1\",\n    \"bloqId\": \"c3ee858c-f3d8-45a3-803d-e080649bbb6f\",\n    \"status\": \"CLOSED\",\n    \"isOccupied\": false\n  },\n  {\n    \"id\": \"2191e1b5-99c7-45df-8302-998be394be48\",\n    \"bloqId\": \"c3ee858c-f3d8-45a3-803d-e080649bbb6f\",\n    \"status\": \"CLOSED\",\n    \"isOccupied\": false\n  },\n  {\n    \"id\": \"6b33b2d1-af38-4b60-a3c5-53a69f70a351\",\n    \"bloqId\": \"c3ee858c-f3d8-45a3-803d-e080649bbb6f\",\n    \"status\": \"CLOSED\",\n    \"isOccupied\": false\n  },\n  {\n    \"id\": \"ea6db2f6-2da7-42ed-9619-d40d718b7bec\",\n    \"bloqId\": \"c3ee858c-f3d8-45a3-803d-e080649bbb6f\",\n    \"status\": \"CLOSED\",\n    \"isOccupied\": false\n  },\n  {\n    \"id\": \"3c881050-54bb-48bb-9d2c-f221d10f876b\",\n    \"bloqId\": \"c3ee858c-f3d8-45a3-803d-e080649bbb6f\",\n    \"status\": \"CLOSED\",\n    \"isOccupied\": false\n  }\n]\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3003/api/lockers/bulkSave",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"lockers",
+						"bulkSave"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCKER - Allocate By ID",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/api/lockers/allocateLockerById/1b8d1e89-2514-4d91-b813-044bf0ce8d20",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"lockers",
+						"allocateLockerById",
+						"1b8d1e89-2514-4d91-b813-044bf0ce8d20"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCKER - Free By ID",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/api/lockers/freeLockerById/1b8d1e89-2514-4d91-b813-044bf0ce8d2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"lockers",
+						"freeLockerById",
+						"1b8d1e89-2514-4d91-b813-044bf0ce8d2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LOCKER - Delete All",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/api/lockers/deleteAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"lockers",
+						"deleteAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RENT - Find All",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/api/rents/findAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"rents",
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RENT - Drop off",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rentId\": \"d5a42db4-8047-4902-9f7d-40d7abc58ab3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3003/api/rents/dropoff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"rents",
+						"dropoff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RENT - Pick Up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"rentId\": \"d5a42db4-8047-4902-9f7d-40d7abc58ab3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3003/api/rents/pickup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"rents",
+						"pickup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RENT - Create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"weight\": 5,\n    \"size\": \"M\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3003/api/rents/create/sampleaddress",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"rents",
+						"create",
+						"sampleaddress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RENT - Delete All",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3003/api/rents/deleteAll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3003",
+					"path": [
+						"api",
+						"rents",
+						"deleteAll"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
